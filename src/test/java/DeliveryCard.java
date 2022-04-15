@@ -26,7 +26,6 @@ public class DeliveryCard {
 
     @Test
     void shouldSendForm() {
-        Configuration.holdBrowserOpen = true;
         $x("//input[@type='text']").val("Воронеж");
         $x("//input[@name='name']").val("Барсуков Иван");
         $x("//input[@name='phone']").val("+79204069356");
@@ -39,8 +38,7 @@ public class DeliveryCard {
     @Test
     void shouldSendFormWithDate() {
 
-        String chooseDate = chooseDate(10);
-        Configuration.holdBrowserOpen = true;
+        String chooseDate = chooseDate(8);
         $x("//input[@type='text']").val("Воронеж");
         $("[placeholder='Дата встречи']").doubleClick().sendKeys(chooseDate);
         $x("//input[@name='name']").val("Барсуков Иван");
@@ -54,7 +52,6 @@ public class DeliveryCard {
     @Test
     void shouldSendFormWithWrongCity() {
 
-        Configuration.holdBrowserOpen = true;
         $x("//input[@type='text']").val("Минск");
         $x("//input[@name='name']").val("Барсуков Иван");
         $x("//input[@name='phone']").val("+79204069356");
@@ -67,7 +64,6 @@ public class DeliveryCard {
     @Test
     void shouldSendFormWithWrongDate() {
         String chooseDate = chooseDate(2);
-        Configuration.holdBrowserOpen = true;
         $x("//input[@type='text']").val("Воронеж");
         $("[placeholder='Дата встречи']").doubleClick().sendKeys(chooseDate);
         $x("//input[@name='name']").val("Гончарук-Иванова Анна");
@@ -79,7 +75,6 @@ public class DeliveryCard {
     @Test
     void shouldSendFormWithWrongName() {
 
-        Configuration.holdBrowserOpen = true;
         $x("//input[@type='text']").val("Воронеж");
         $x("//input[@name='name']").val("Barsykov Ivan");
         $x("//input[@name='phone']").val("+79204069356");
@@ -91,7 +86,6 @@ public class DeliveryCard {
     @Test
     void shouldSendFormWithWrongTel() {
 
-        Configuration.holdBrowserOpen = true;
         $x("//input[@type='text']").val("Воронеж");
         $x("//input[@name='name']").val("Васильев Станислав");
         $x("//input[@name='phone']").val("+79206");
@@ -103,7 +97,6 @@ public class DeliveryCard {
     @Test
     void shouldSendFormWithoutAgreement() {
 
-        Configuration.holdBrowserOpen = true;
         $x("//input[@type='text']").val("Воронеж");
         $x("//input[@name='name']").val("Васильев Станислав");
         $x("//input[@name='phone']").val("+79206895656");
